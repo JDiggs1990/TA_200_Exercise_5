@@ -1,9 +1,9 @@
-import CheckboxPage from '../pageobjects/checkbox.page.js'
+import CheckboxPage from '../pageobjects/checkboxes.page.js'
 
 describe('My Checkbox application', () => {
     it('should open the page', async () => {
-        await CheckboxPage.open()
-        await browser.pause(3000)
+        await CheckboxPage.open();
+        await browser.pause(3000);
     })
 
 /*
@@ -11,45 +11,43 @@ describe('My Checkbox application', () => {
         let var y = 1;
  */       
 
-    it('should check for checkboxOne status', async () => {    
+    it('should check for checkboxOne status, then clicks it', async () => {    
 
-        if(CheckboxPage.checkboxOne.isSelected==(false)){
-            await (CheckBoxPage).checkboxOne.click();
-            await browser.pause(3000)
-        }
-        else{await console.log('Error')}
-    })
-
-        
-    it('should check for checkboxTwo status', async () => {
-
-        if(CheckboxPage.checkboxTwo.isSelected==(false){ 
-            await CheckboxPage.checkboxTwo.click();
+        if(await CheckboxPage.checkboxOne.isSelected() == false){
+            console.log ('enterd loop line17',await CheckboxPage.checkboxOne.isSelected());
+            await CheckboxPage.checkboxOne.click();
             await browser.pause(3000);
         }
-        else{await console.log('Error2')}
-    })
+        //else {await console.log('line21');
+        //        }
+        })
+        
+     it('should check for checkboxTwo status, then click if appropriate', async () => {
+        
+         if(await CheckboxPage.checkboxTwo.isSelected() == true){ 
+            console.log ('entered loop line28',await CheckboxPage.checkboxTwo.isSelected());
+            // await CheckboxPage.checkboxTwo.click();
+            // console.log ('entered loop line30');
+            // await browser.pause(3000);
+         }
+    //     else{console.log('Error2')}
+         })
 
 
-/*
 
-        expect(checkboxOne.isSelected) != TRUE{
-            await return console.log ("Checkbox One not selected")
-        }
+    // xit('verifies that both boxes are unchecked', async () => {
 
-        expect(checkboxTwo.isSelected) != TRUE{
-            await return console.log ("Checkbox Two not selected")
-        }
+    //     expect checkboxOne.isSelected != true{
+    //         console.log ('Checkbox One not selected');
+    //     }
 
-*/
-
-
-
+    //     expect checkboxTwo.isSelected != (true){
+    //         console.log ('Checkbox Two not selected');
+    //     }
+    //     })
         
 //    })
 })
-
-
 
 
 /*
@@ -57,18 +55,4 @@ Their code
 
 tobeselected()
 
-
-
-
-
-
-
 */
-
-
-
-
-
-
-
-
