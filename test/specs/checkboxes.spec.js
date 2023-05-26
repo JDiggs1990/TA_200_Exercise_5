@@ -1,7 +1,7 @@
 import CheckboxPage from '../pageobjects/checkbox.page.js'
 
 describe('My Checkbox application', () => {
-    it('should determine whether boxes are checked', async () => {
+    it('should open the page', async () => {
         await CheckboxPage.open()
         await browser.pause(3000)
     })
@@ -11,23 +11,24 @@ describe('My Checkbox application', () => {
         let var y = 1;
  */       
 
-    xit('should check for checkboxOne status', async () => {    
+    it('should check for checkboxOne status', async () => {    
 
-        if(CheckboxPage.checkboxOne.isSelected==(FALSE)){
+        if(CheckboxPage.checkboxOne.isSelected==(false)){
             await (CheckBoxPage).checkboxOne.click();
             await browser.pause(3000)
         }
+        else{await console.log('Error')}
     })
 
         
     it('should check for checkboxTwo status', async () => {
 
-        if(CheckboxPage.checkboxTwo.isSelected==FALSE){ 
+        if(CheckboxPage.checkboxTwo.isSelected==(false){ 
             await CheckboxPage.checkboxTwo.click();
             await browser.pause(3000);
-
         }
-    }
+        else{await console.log('Error2')}
+    })
 
 
 /*
